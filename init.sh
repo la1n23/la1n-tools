@@ -2,8 +2,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sed -i 's/robbyrussell/funky/g' ~/.zshrc
 sudo apt update && sudo apt install -y fzf atool
 sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
-# doesn work on parrotOS ((
 /usr/bin/setxkbmap -option "ctrl:nocaps"
+/usr/bin/setxkbmap -option "caps:ctrl_modifier"
 sudo chsh $(whoami) -s $(which zsh)
 /bin/zsh -i
 # TODO: find or create nice nvim config
