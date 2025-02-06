@@ -4,7 +4,7 @@ sudo apt update && sudo apt install -y fzf atool
 sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
 # doesn work on parrotOS ((
 /usr/bin/setxkbmap -option "ctrl:nocaps"
-sudo chsh $(whoami) -s /bin/bash
+sudo chsh $(whoami) -s $(which zsh)
 /bin/zsh -i
 # TODO: find or create nice nvim config
 #echo 'export VISUAL=nvim' >> .zshrc
