@@ -1,11 +1,23 @@
+#printf "Enable vim copilot? [y/N] ";
+#read answ;
+#COPILOT=0;
+#if echo "$answ" | grep -q '[yY]'; then
+#  echo "Install copilot";
+#  COPILOT=1;
+#fi
+
+# Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i 's/robbyrussell/funky/g' ~/.zshrc
 sudo apt update && sudo apt install -y fzf atool
 sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
-/usr/bin/setxkbmap -option "ctrl:nocaps"
-/usr/bin/setxkbmap -option "caps:ctrl_modifier"
 sudo chsh $(whoami) -s $(which zsh)
 
+### Keybinds (need to fix on ParrotOS)
+/usr/bin/setxkbmap -option "ctrl:nocaps"
+/usr/bin/setxkbmap -option "caps:ctrl_modifier"
+
+### VIM
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 cat << DESU >> ~/.vimrc
@@ -19,10 +31,16 @@ DESU
 
 vim -c PlugInstall +qa
 
-/bin/zsh -i
-
-# TODO: find or create nice nvim config
+# TODO: migrate to nvim
 #echo 'export VISUAL=nvim' >> .zshrc
 #echo 'export EDITOR="$VISUAL"' >> .zshrc
 #bash -c "$(curl -fsSL https://raw.githubusercontent.com/jdhao/nvim-config/refs/heads/main/docs/nvim_setup_linux.sh)"
 
+# Copilot for vim
+# install nodejs
+# sudo apt install -y node
+#git clone --depth=1 https://github.com/github/copilot.vim.git ~/.vim/pack/github/start/copilot.vim
+#vim -c 'Copilot setup'
+
+
+/bin/zsh -i
