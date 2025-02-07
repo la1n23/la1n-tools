@@ -6,12 +6,14 @@
 #  COPILOT=1;
 #fi
 
-# Oh my zsh
+### Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i 's/robbyrussell/funky/g' ~/.zshrc
 sudo apt update && sudo apt install -y fzf atool
 sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
 sudo chsh $(whoami) -s $(which zsh)
+# ParrotOS is shit and gay
+echo "zsh -i" >> ~/.bashrc
 
 ### Keybinds (need to fix on ParrotOS)
 /usr/bin/setxkbmap -option "ctrl:nocaps"
