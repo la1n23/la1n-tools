@@ -14,6 +14,7 @@ sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
 sudo chsh $(whoami) -s $(which zsh)
 # ParrotOS is shit and gay
 echo "zsh -i" >> ~/.bashrc
+# TODO: configure omz theme to display current IP
 
 ### Keybinds (need to fix on ParrotOS)
 /usr/bin/setxkbmap -option "ctrl:nocaps"
@@ -25,6 +26,7 @@ cat << DESU >> ~/.zshrc
 DESU
 
 ### VIM
+# TODO: configure colortheme
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 cat << DESU > ~/.vimrc
@@ -37,6 +39,8 @@ set number
 DESU
 
 vim -c PlugInstall +qa
+
+gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 
 # TODO: migrate to nvim
 #echo 'export VISUAL=nvim' >> .zshrc
