@@ -19,6 +19,11 @@ echo "zsh -i" >> ~/.bashrc
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 /usr/bin/setxkbmap -option "caps:ctrl_modifier"
 
+cat << DESU >> ~/.zshrc
+/usr/bin/setxkbmap -option "ctrl:nocaps"
+/usr/bin/setxkbmap -option "caps:ctrl_modifier"
+DESU
+
 ### VIM
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
