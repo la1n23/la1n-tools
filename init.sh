@@ -8,12 +8,14 @@
 
 ### Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sed -i 's/robbyrussell/funky/g' ~/.zshrc
+sed -i 's/robbyrussell/lpha3ch0/g' ~/.zshrc
 sudo apt update && sudo apt install -y fzf atool vifm
 sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
 sudo chsh $(whoami) -s $(which zsh)
 echo 'export TERM=xterm-256color' >> ~/.zshrc
-# ParrotOS is shit and gay
+echo 'https://raw.githubusercontent.com/sdcampbell/lpha3cho-Oh-My-Zsh-theme-for-pentesters/refs/heads/main/lpha3ch0.zsh-theme' > ~/.oh-my-zsh/themes/lpha3ch0.zsh-theme
+
+# ParrotOS is shit and gay - csh doesnt work
 echo "zsh -i" >> ~/.bashrc
 # TODO: configure omz theme to display current IP
 
@@ -55,8 +57,17 @@ DESU
 
 vim -c PlugInstall +qa
 
+# dont work :(
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 xset -dpms
+
+# variables for vpn
+cat << DESU >> ~/.zshrc
+VPN_USER=
+VPN_CERT_HASH=
+VPN_DOMAIN=
+VPN_PORT=
+DESU
 
 # TODO: migrate to nvim
 #echo 'export VISUAL=nvim' >> .zshrc
@@ -69,5 +80,7 @@ xset -dpms
 #git clone --depth=1 https://github.com/github/copilot.vim.git ~/.vim/pack/github/start/copilot.vim
 #vim -c 'Copilot setup'
 
+echo "Done, start downloading seclists... ctrl+C to skip"
+sudo apt install seclists
 
 /bin/zsh -i
