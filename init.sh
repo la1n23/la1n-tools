@@ -13,7 +13,7 @@ sudo apt update && sudo apt install -y fzf atool vifm
 sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
 sudo chsh $(whoami) -s $(which zsh)
 echo 'export TERM=xterm-256color' >> ~/.zshrc
-echo 'https://raw.githubusercontent.com/sdcampbell/lpha3cho-Oh-My-Zsh-theme-for-pentesters/refs/heads/main/lpha3ch0.zsh-theme' > ~/.oh-my-zsh/themes/lpha3ch0.zsh-theme
+curl 'https://raw.githubusercontent.com/sdcampbell/lpha3cho-Oh-My-Zsh-theme-for-pentesters/refs/heads/main/lpha3ch0.zsh-theme' > ~/.oh-my-zsh/themes/lpha3ch0.zsh-theme
 
 # ParrotOS is shit and gay - csh doesnt work
 echo "zsh -i" >> ~/.bashrc
