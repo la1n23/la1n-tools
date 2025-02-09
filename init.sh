@@ -26,8 +26,8 @@ cat << DESU >> ~/.zshrc
 DESU
 
 ### VIM
-# TODO: configure colortheme
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/opt/solarized8
 
 cat << DESU > ~/.vimrc
 call plug#begin('~/.vim/plugged')"
@@ -36,6 +36,8 @@ call plug#end()
 set autoindent expandtab tabstop=2 shiftwidth=2
 set autoindent
 set number
+set background=dark
+colorscheme solarized8
 DESU
 
 vim -c PlugInstall +qa
