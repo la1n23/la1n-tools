@@ -12,6 +12,7 @@ sed -i 's/robbyrussell/funky/g' ~/.zshrc
 sudo apt update && sudo apt install -y fzf atool
 sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
 sudo chsh $(whoami) -s $(which zsh)
+echo 'export TERM=xterm-256color' >> ~/.zshrc
 # ParrotOS is shit and gay
 echo "zsh -i" >> ~/.bashrc
 # TODO: configure omz theme to display current IP
@@ -32,12 +33,24 @@ git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/op
 cat << DESU > ~/.vimrc
 call plug#begin('~/.vim/plugged')"
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }"
+Plug 'itchyny/lightline.vim'
+Plug 'StanAngeloff/php.vim'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
 call plug#end()
+
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+
 set autoindent expandtab tabstop=2 shiftwidth=2
 set autoindent
 set number
 set background=dark
 colorscheme solarized8
+
+set laststatus=2
 DESU
 
 vim -c PlugInstall +qa
