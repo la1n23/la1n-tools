@@ -32,11 +32,13 @@ DESU
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/opt/solarized8
 
+# TODO: testd and fix autocompletion
 #Plug 'ncm2/ncm2'
 #Plug 'ncm2/ncm2-bufword'
 #Plug 'ncm2/ncm2-path'
 #autocmd BufEnter * call ncm2#enable_for_buffer()
 #set completeopt=noinsert,menuone,noselect
+
 cat << DESU > ~/.vimrc
 call plug#begin('~/.vim/plugged')"
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }"
@@ -56,11 +58,11 @@ DESU
 
 vim -c PlugInstall +qa
 
-# dont work :(
+### dont work :(
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 xset -dpms
 
-# variables for vpn
+### variables for vpn
 cat << DESU >> ~/.zshrc
 VPN_USER=
 VPN_CERT_HASH=
