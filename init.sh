@@ -41,6 +41,7 @@ DESU
 vim -c PlugInstall +qa
 
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+xset -dpms
 
 # TODO: migrate to nvim
 #echo 'export VISUAL=nvim' >> .zshrc
