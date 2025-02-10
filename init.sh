@@ -8,12 +8,12 @@
 
 ### Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sed -i 's/robbyrussell/lpha3ch0/g' ~/.zshrc
+sed -i 's/robbyrussell/x-lpha3ch0/g' ~/.zshrc
 sudo apt update && sudo apt install -y fzf atool vifm rlwrap
 sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
 sudo chsh $(whoami) -s $(which zsh)
 echo 'export TERM=xterm-256color' >> ~/.zshrc
-curl 'https://raw.githubusercontent.com/sdcampbell/lpha3cho-Oh-My-Zsh-theme-for-pentesters/refs/heads/main/lpha3ch0.zsh-theme' > ~/.oh-my-zsh/themes/lpha3ch0.zsh-theme
+curl 'https://raw.githubusercontent.com/la1n23/la1n-tools/refs/heads/master/x-lpha3ch0.zsh-theme' > ~/.oh-my-zsh/themes/x-lpha3ch0.zsh-theme
 
 # ParrotOS is shit and gay - csh doesnt work
 echo "zsh -i" >> ~/.bashrc
