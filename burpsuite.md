@@ -1,5 +1,8 @@
 ## Burpsuite configuration
 
+### Setting up CA
+https://portswigger.net/burp/documentation/desktop/external-browser-config/certificate
+
 ### Extensions:
 * Turbo intruder
 * logger++
