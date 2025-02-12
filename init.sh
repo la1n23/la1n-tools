@@ -49,6 +49,7 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlig
 Plug 'itchyny/lightline.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'roxma/nvim-yarp'
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 set autoindent expandtab tabstop=2 shiftwidth=2
@@ -58,6 +59,16 @@ set background=dark
 colorscheme solarized8
 
 set laststatus=2
+
+let mapleader = ","
+imap jj <esc>
+
+nmap <C-H> 5h
+nmap <C-J> 5j
+nmap <C-K> 5k
+nmap <C-L> 5l
+
+filetype plugin on
 DESU
 
 vim -c PlugInstall +qa
