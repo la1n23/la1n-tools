@@ -41,6 +41,8 @@ git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/op
 #autocmd BufEnter * call ncm2#enable_for_buffer()
 #set completeopt=noinsert,menuone,noselect
 
+# TODO: comment/uncomment line/region hotkeys
+# TODO: autoformat file/region hotkeys
 cat << DESU > ~/.vimrc
 call plug#begin('~/.vim/plugged')"
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }"
