@@ -9,7 +9,7 @@
 ### Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i 's/robbyrussell/x-lpha3ch0/g' ~/.zshrc
-sudo apt update && sudo apt install -y fzf atool vifm rlwrap
+sudo apt update && sudo apt install -y fzf atool vifm rlwrap httrack
 sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
 sudo chsh $(whoami) -s $(which zsh)
 echo 'export TERM=xterm-256color' >> ~/.zshrc
