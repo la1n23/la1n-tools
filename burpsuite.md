@@ -11,6 +11,10 @@ https://portswigger.net/burp/documentation/desktop/external-browser-config/certi
 * csrf FREE poc creator https://github.com/rammarj/csrf-poc-creator/releases/download/v0.0.2/csrf-poc-creator-0.0.2.jar
 * Hackvertor - tag-based encoder
 * JWT Editor
+* Content Type Converter
+
+### Extensions I heard of but have not used:
+* HTTP Request Smuggler (dunno how to work with it)
 * Param miner - unique cache keys 'Add dynamic cachebuster'
 
 **Download Jython88**
