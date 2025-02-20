@@ -16,6 +16,8 @@ echo 'export TERM=xterm-256color' >> ~/.zshrc
 curl 'https://raw.githubusercontent.com/la1n23/la1n-tools/refs/heads/master/x-lpha3ch0.zsh-theme' > ~/.oh-my-zsh/themes/x-lpha3ch0.zsh-theme
 echo "export PATH=/home/$(whoami)/la1n-tools:$PATH" >> ~/.zshrc
 
+# gdb enhancer
+bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 
 # ParrotOS is shit and gay - csh doesnt work
 echo "zsh -i" >> ~/.bashrc
