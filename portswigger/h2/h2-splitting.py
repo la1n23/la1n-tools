@@ -11,6 +11,10 @@ from random import randrange
 SERVER_NAME = '0ac6001a038d6e3280a1e40e00be00be.web-security-academy.net'
 SERVER_PORT = 443
 
+# If no 302 response for a long time, reset connection by sending that request 10 times:
+# GET /qq HTTP/2
+# Host: 0ac6001a038d6e3280a1e40e00be00be.web-security-academy.net
+
 try:
     while True:
         socket.setdefaulttimeout(15)
@@ -75,7 +79,7 @@ try:
         print(raw_response['headers'])
         if raw_response['headers'][0][1] == b'302':
             print(raw_response['body'])
-        wait = randrange(1,5)
+        wait = randrange(1,10)
         time.sleep(wait)
 
 except KeyboardInterrupt:
