@@ -51,7 +51,7 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlig
 Plug 'itchyny/lightline.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'roxma/nvim-yarp'
-Plug 'scrooloose/nerdcommenter'
+#Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 set autoindent expandtab tabstop=2 shiftwidth=2
