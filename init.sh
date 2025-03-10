@@ -19,9 +19,10 @@ echo "export PATH=/home/$(whoami)/la1n-tools:$PATH" >> ~/.zshrc
 # gdb enhancer
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 
-# ParrotOS is shit and gay - csh doesnt work
-echo "\nzsh -i" >> ~/.bashrc
-# TODO: configure omz theme to display current IP
+# keep bash settings
+cat << DESU >> ~/.bashrc
+zsh -i
+DESU
 
 ### Keybinds (need to fix on ParrotOS)
 /usr/bin/setxkbmap -option "ctrl:nocaps"
@@ -45,6 +46,8 @@ git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/op
 
 # TODO: comment/uncomment line/region hotkeys
 # TODO: autoformat file/region hotkeys
+# TODO: doesnt work on parrotos
+#Plug 'scrooloose/nerdcommenter'
 cat << DESU > ~/.vimrc
 call plug#begin('~/.vim/plugged')"
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }"
@@ -52,8 +55,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'roxma/nvim-yarp'
 call plug#end()
-
-#Plug 'scrooloose/nerdcommenter'
 
 set autoindent expandtab tabstop=2 shiftwidth=2
 set autoindent
@@ -102,4 +103,4 @@ DESU
 echo "Done, start downloading seclists... ctrl+C to skip"
 sudo apt install seclists
 
-/bin/zsh -i
+zsh -i
