@@ -21,6 +21,7 @@ bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 
 # keep bash settings
 cat << DESU >> ~/.bashrc
+
 zsh -i
 DESU
 
