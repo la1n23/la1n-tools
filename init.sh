@@ -15,12 +15,10 @@ sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
 #sudo chsh $(whoami) -s $(which zsh)
 echo 'export TERM=xterm-256color' >> ~/.zshrc
 curl 'https://raw.githubusercontent.com/la1n23/la1n-tools/refs/heads/master/x-lpha3ch0.zsh-theme' > ~/.oh-my-zsh/themes/x-lpha3ch0.zsh-theme
-echo "export PATH=/home/$(whoami)/la1n-tools:$PATH" >> ~/.zshrc
 
 # gdb enhancer
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 
-# keep bash settings
 cat << DESU >> ~/.bashrc
 
 exec zsh
@@ -31,8 +29,20 @@ DESU
 /usr/bin/setxkbmap -option "caps:ctrl_modifier"
 
 cat << DESU >> ~/.zshrc
+
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 /usr/bin/setxkbmap -option "caps:ctrl_modifier"
+
+# python2.7
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
+
+export PATH=~/la1n-tools:~/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/share:/usr/share/john:/opt/mssql-tools/bin:$PATH
 DESU
 
 ### VIM
