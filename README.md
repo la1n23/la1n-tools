@@ -30,6 +30,9 @@ Visit http://burp and click to the upper right corner to download CA
 * Content Type Converter
 * HTTP Request smuggler
 * Pram Miner (RMB -> Guess Headres - find unkeyd cache header)
+* Collaborator Everywhere
+* https://github.com/C-960/HTTP-Request-Converter - copy as fetch
+* License Title Cleaner :^]
 
 **Download Jython88**
 https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.4/jython-standalone-2.7.4.jar
