@@ -34,7 +34,7 @@ cat << DESU >> ~/.zshrc
 /usr/bin/setxkbmap -option "caps:ctrl_modifier"
 
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH=$PYENV_ROOT/bin:~/la1n-tools:~/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/share:/usr/share/john:/opt/mssql-tools/bin:$PATH
+export PATH=$HOME/.pyenv/bin:~/la1n-tools:~/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/share:/usr/share/john:/opt/mssql-tools/bin:$PATH
 eval "$(pyenv init -)"
 
 if [ -f "$HOME/.cargo/env" ]; then
