@@ -1,3 +1,4 @@
+#!/bin/bash
 #printf "Enable vim copilot? [y/N] ";
 #read answ;
 #COPILOT=0;
