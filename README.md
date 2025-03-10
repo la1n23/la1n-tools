@@ -4,6 +4,10 @@
 curl -sSL https://raw.githubusercontent.com/la1n23/tools/refs/heads/master/init.sh|bash
 ```
 
+```bash
+cd ~/ && git clone https://github.com/la1n23/la1n-tools.git && bash la1n-tools/init.sh
+```
+
 # vim formatters for c/php/perl/json/sql
 ```bash
 curl -sSL https://raw.githubusercontent.com/la1n23/tools/refs/heads/master/vim-autoformat.sh|bash

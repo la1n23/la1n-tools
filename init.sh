@@ -7,7 +7,7 @@
 #fi
 
 ### Oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -- --skip-chsh
 sed -i 's/robbyrussell/x-lpha3ch0/g' ~/.zshrc
 sudo apt update && sudo apt install -y fzf atool vifm rlwrap httrack
 sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
