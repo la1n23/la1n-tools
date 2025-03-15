@@ -24,6 +24,7 @@ curl -sSL https://raw.githubusercontent.com/la1n23/tools/refs/heads/master/vim-a
 * Task Marker
 * Templater
 * Regex Find/Replace
+* Canvas Mindmap
 
 # Burpsuite configuration
 
