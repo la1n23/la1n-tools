@@ -25,6 +25,7 @@ curl -sSL https://raw.githubusercontent.com/la1n23/tools/refs/heads/master/vim-a
 * Templater
 * Regex Find/Replace
 * Canvas Mindmap
+* Excalidraw
 
 # Burpsuite configuration
 
@@ -42,6 +43,7 @@ Visit http://burp and click to the upper right corner to download CA
 * Pram Miner (RMB -> Guess Headres - find unkeyd cache header)
 * Collaborator Everywhere
 * https://github.com/C-960/HTTP-Request-Converter - copy as fetch
+* InQL - graphql helper
 
 **Download Jython88**
 https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.4/jython-standalone-2.7.4.jar

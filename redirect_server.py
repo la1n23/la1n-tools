@@ -8,7 +8,12 @@ if len(sys.argv)-1 != 2:
     sys.exit()
 
 class Redirect(BaseHTTPRequestHandler):
-    req_count = 0
+    req_count = None
+    def do_HEAD(self):
+        self.send_response(200)
+        self.send_header('Content-Type', 'text/plain')
+        self.send_header('Content-Length', '0')
+        self.end_headers()
     def do_GET(self):
         if Redirect.req_count is not None and Redirect.req_count == 0:
             Redirect.req_count += 1
