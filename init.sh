@@ -11,10 +11,11 @@
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -- --unattended
 sed -i 's/robbyrussell/x-lpha3ch0/g' ~/.zshrc
 sudo apt update && sudo apt install -y fzf atool vifm rlwrap httrack
-sed -i 's/(git)/(git fzf nmap)/g' ~/.zshrc
+sed -i 's/(git)/(git fzf nmap command-not-found zsh-autosuggestions)/g' ~/.zshrc
 #sudo chsh $(whoami) -s $(which zsh)
 echo 'export TERM=xterm-256color' >> ~/.zshrc
 curl 'https://raw.githubusercontent.com/la1n23/la1n-tools/refs/heads/master/x-lpha3ch0.zsh-theme' > ~/.oh-my-zsh/themes/x-lpha3ch0.zsh-theme
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # gdb enhancer
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
