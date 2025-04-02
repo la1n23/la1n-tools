@@ -11,7 +11,9 @@ if [ -n "$SSH_CLIENT" ]; then
 fi
 
 MY_IP=`curl -s ident.me`
-PROMPT="%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$reset_color%}%{$fg_bold[grey]%}]%{$reset_color%} %{$fg_bold[blue]%}%10c %W %t $(ifconfig | grep -A 1 tun0 | grep inet | tr -s ' ' | cut -d ' ' -f 3) | ${MY_IP} %{$reset_color%} $(git_prompt_info) $(git_remote_status)
+VPN_IP=$(ifconfig | grep -A 1 tun0 | grep inet | tr -s ' ' | cut -d ' ' -f 3) 
+LOCK=`[[ -f /etc/vpn_lock ]] && echo -n '🔒'`
+PROMPT="%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$reset_color%}%{$fg_bold[grey]%}]%{$reset_color%} %{$fg_bold[blue]%}%10c %W %t | ${VPN_IP} ${MY_IP} ${LOCK} %{$reset_color%} $(git_prompt_info) $(git_remote_status)
 %{$fg_bold[cyan]%}❯%{$reset_color%} "
 
 #PROMPT="%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$reset_color%}%{$fg_bold[grey]%}]%{$reset_color%} %{$fg_bold[blue]%}%10c %W %t $(curl -s http://ipecho.net/plain; echo) %{$reset_color%} $(git_prompt_info) $(git_remote_status)

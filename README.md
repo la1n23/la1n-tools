@@ -44,6 +44,12 @@ Visit http://burp and click to the upper right corner to download CA
 * Collaborator Everywhere
 * https://github.com/C-960/HTTP-Request-Converter - copy as fetch
 * InQL - graphql helper
+* get all urls (GAU analogue)
+
+### Bambdas
+```
+return requestResponse.httpService().host().matches("([\\.|\\w])*genius\\.com");
+```
 
 **Download Jython88**
 https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.4/jython-standalone-2.7.4.jar
