@@ -27,6 +27,13 @@ curl -sSL https://raw.githubusercontent.com/la1n23/tools/refs/heads/master/vim-a
 * Canvas Mindmap
 * Excalidraw
 
+# Postman
+Certs for proxy
+```bash
+ls ~/.config/Postman/proxy
+certificates  postman-proxy-ca.crt  postman-proxy-ca.key
+```
+
 # Burpsuite configuration
 
 ### Setting up CA
