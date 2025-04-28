@@ -1,61 +1,69 @@
-/* 
-  npm init
-  npm install @babel/parser @babel/traverse @babel/generator
-*/
 const parser = require("@babel/parser");
 const traverse = require("@babel/traverse").default;
 const generator = require("@babel/generator").default;
 const fs = require("fs");
 const path = require("path");
 
-const inputFile = process.argv[2];
-if (!inputFile) {
-    console.error("Please provide an input file.");
-    process.exit(1);
+
+if (process.argv.length <= 2) {
+  console.error("node vars-rename.js [file1] [file2]...");
+  process.exit(1);
 }
+const fileNames = process.argv.slice(2)
 
-const outputFile = inputFile.replace(/\.js$/, ".vars.js");
+for (const inputFile of fileNames) {
+  if (inputFile.includes(".vars.js")) {
+      console.error(`${inputFile} ignored`);
+      continue;
+  }
 
-const code = fs.readFileSync(inputFile, "utf-8");
+  const outputFile = inputFile.replace(/\.js$/, ".vars.js");
+  if (fs.existsSync(outputFile)) {
+      console.error(`${inputFile} ignored because ${outputFile} already exist`);
+      continue;
+  }
 
-const ast = parser.parse(code, {
-    sourceType: "unambiguous",
-    allowReturnOutsideFunction: true,
-    allowAwaitOutsideFunction: true,
-    errorRecovery: true,
-    plugins: [
-        "jsx",
-        "classProperties",
-        "dynamicImport",
-        "optionalChaining",
-        "nullishCoalescingOperator",
-        "objectRestSpread"
-    ]
-});
+  console.log(`${inputFile} processing...`);
+  const code = fs.readFileSync(inputFile, "utf-8");
 
-let counter = 0;
+  const ast = parser.parse(code, {
+      sourceType: "unambiguous",
+      allowReturnOutsideFunction: true,
+      allowAwaitOutsideFunction: true,
+      errorRecovery: true,
+      plugins: [
+          "jsx",
+          "classProperties",
+          "dynamicImport",
+          "optionalChaining",
+          "nullishCoalescingOperator",
+          "objectRestSpread"
+      ]
+  });
 
-function generateName() {
-    counter++;
-    return `__var_${String(counter).padStart(5, '0')}__`;
+  let counter = 0;
+
+  function generateName() {
+      counter++;
+      return `__var_${String(counter).padStart(5, '0')}__`;
+  }
+
+  traverse(ast, {
+      Scopable(path) {
+          const bindings = path.scope.getAllBindings();
+
+          for (const name in bindings) {
+              if (name.length <= 2) {
+                  const binding = bindings[name];
+                  const newName = generateName();
+                  binding.scope.rename(name, newName);
+              }
+          }
+      }
+  });
+
+  const output = generator(ast, { compact: false }).code;
+  fs.writeFileSync(outputFile, output);
+
+  console.log(`${inputFile} completed`);
 }
-
-traverse(ast, {
-    Scopable(path) {
-        const bindings = path.scope.getAllBindings();
-
-        for (const name in bindings) {
-            if (name.length <= 2) {
-                const binding = bindings[name];
-                const newName = generateName();
-                binding.scope.rename(name, newName);
-            }
-        }
-    }
-});
-
-const output = generator(ast, { compact: false }).code;
-fs.writeFileSync(outputFile, output);
-
-console.log(`Processing complete. Output written to: ${outputFile}`);
-
