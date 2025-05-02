@@ -40,17 +40,20 @@ certificates  postman-proxy-ca.crt  postman-proxy-ca.key
 Visit http://burp and click to the upper right corner to download CA
 
 ### Extensions:
+#### Must have
+* Logger++ for exporting history as HAR file
+* https://github.com/yeswehack/PwnFox/
+* JWT Editor
+* InQL - graphql helper
+* Hackvertor - tag-based encoder
+* HTTP Request smuggler
+#### Misc
 * Turbo intruder
 * copy request as ffuf
-* csrf FREE poc creator https://github.com/rammarj/csrf-poc-creator/releases/download/v0.0.2/csrf-poc-creator-0.0.2.jar
-* Hackvertor - tag-based encoder
-* JWT Editor
 * Content Type Converter
-* HTTP Request smuggler
 * Pram Miner (RMB -> Guess Headres - find unkeyd cache header)
 * Collaborator Everywhere
 * https://github.com/C-960/HTTP-Request-Converter - copy as fetch
-* InQL - graphql helper
 * get all urls (GAU analogue)
 
 ### Bambdas
