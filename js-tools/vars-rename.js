@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const parser = require("@babel/parser");
 const traverse = require("@babel/traverse").default;
 const generator = require("@babel/generator").default;
@@ -6,7 +8,8 @@ const path = require("path");
 
 
 if (process.argv.length <= 2) {
-  console.error("node vars-rename.js [file1] [file2]...");
+  console.error("npx ~/la1n-tools/js-tools/ [file1] [file2]...");
+
   process.exit(1);
 }
 const fileNames = process.argv.slice(2)

@@ -41,6 +41,17 @@ eval "$(pyenv init -)"
 if [ -f "$HOME/.cargo/env" ]; then
   . "$HOME/.cargo/env"
 fi
+
+uu() {
+  if [[ -z "$1" ]]; then
+    echo "In-place sort -u. Usage: uu file.txt"
+    return 1
+  fi
+  wc -l "$1"
+  cat "$1" | sort -u  > "$1.tmp"
+  mv "$1.tmp" "$1"
+  wc -l "$1"
+}
 DESU
 
 ### VIM
