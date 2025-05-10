@@ -1,3 +1,8 @@
+# Rename minified variables to unique identifier
+```bash
+~/la1n-tools/js-tools/vars-rename.js *.js
+```
+
 # Extract URLs form HAR file
 
 ```bash
