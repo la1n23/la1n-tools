@@ -47,6 +47,7 @@ Visit http://burp and click to the upper right corner to download CA
 * InQL - graphql helper
 * Hackvertor - tag-based encoder
 * HTTP Request smuggler
+* JS Link Finder
 #### Misc
 * Turbo intruder
 * copy request as ffuf
