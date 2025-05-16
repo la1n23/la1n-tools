@@ -121,6 +121,8 @@ DESU
 #git clone --depth=1 https://github.com/github/copilot.vim.git ~/.vim/pack/github/start/copilot.vim
 #vim -c 'Copilot setup'
 
+cp ~/la1n-tools/.tmux.conf ~/
+
 echo "Done, start downloading seclists... ctrl+C to skip"
 sudo apt install seclists
 
