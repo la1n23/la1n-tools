@@ -24,8 +24,8 @@ curl -sSL https://raw.githubusercontent.com/la1n23/tools/refs/heads/master/vim-a
 * Task Marker
 * Templater
 * Regex Find/Replace
-* Canvas Mindmap
 * Excalidraw
+* Markmind
 
 # Postman
 Certs for proxy
@@ -41,6 +41,7 @@ Visit http://burp and click to the upper right corner to download CA
 
 ### Extensions:
 #### Must have
+* request minimizer
 * Logger++ for exporting history as HAR file
 * https://github.com/yeswehack/PwnFox/
 * JWT Editor
