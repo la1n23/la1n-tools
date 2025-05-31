@@ -25,6 +25,7 @@ curl -sSL https://raw.githubusercontent.com/la1n23/tools/refs/heads/master/vim-a
 * Templater
 * Regex Find/Replace
 * Excalidraw
+* Mermaid-tools (flow charts)
 * Markmind
 
 # Postman

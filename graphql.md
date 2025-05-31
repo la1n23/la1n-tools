@@ -17,3 +17,8 @@ uu wl.txt
 ```bash
 while IFS= read -r line; do echo "$line" | awk '{print toupper(substr($0,1,1)) substr($0,2)}'; echo "$line" | awk '{print tolower(substr($0,1,1)) substr($0,2)}'; echo "$line"; done < wl.txt | sort -u
 ```
+
+## introspection to schema
+```bash
+npx graphql-introspection-json-to-sdl ./schema-2022-with-10k-fields.gql > 2022.sdl
+```

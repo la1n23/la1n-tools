@@ -52,6 +52,17 @@ uu() {
   mv "$1.tmp" "$1"
   wc -l "$1"
 }
+
+# $ cat file.txt
+# test_desu
+# $ cat file.txt | psplit ','
+# test_desu
+# test
+# desu
+psplit() {
+  perl -ne "@p = split /$1/; print; print join(\"\n\",@p);"
+}
+
 DESU
 
 ### VIM
