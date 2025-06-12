@@ -50,6 +50,7 @@ Visit http://burp and click to the upper right corner to download CA
 * Hackvertor - tag-based encoder
 * HTTP Request smuggler
 * JS Link Finder
+* Auth analyzer
 #### Misc
 * Turbo intruder
 * copy request as ffuf

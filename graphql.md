@@ -22,3 +22,15 @@ while IFS= read -r line; do echo "$line" | awk '{print toupper(substr($0,1,1)) s
 ```bash
 npx graphql-introspection-json-to-sdl ./schema-2022-with-10k-fields.gql > 2022.sdl
 ```
+
+## compare two introspections
+```bash
+bun add --global @graphql-inspector/cli graphql
+graphql-inspector diff ./schema-2022-with-10k-fields.gql ./schema-2024-with-10k-fields.gql
+```
+
+## compare two sdl
+```bash
+gem install graphql-schema_comparator
+schema_comparator compare ./2024.sdl ./final_scheme.sdl
+```

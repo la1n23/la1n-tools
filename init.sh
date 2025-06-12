@@ -63,6 +63,10 @@ psplit() {
   perl -ne "@p = split /$1/; print; print join(\"\n\",@p);"
 }
 
+hurls() {
+  cat $1 | jq '.log.entries.[].request.url' | tr -d '"'
+}
+
 DESU
 
 ### VIM
