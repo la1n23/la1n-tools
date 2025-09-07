@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <animateTransform 
+    attributeName="transform" 
+    type="rotate" 
+    onbegin="alert('XSS')" 
+    dur="1s"/>
+</svg>
+

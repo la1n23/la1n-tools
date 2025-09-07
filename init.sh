@@ -35,7 +35,7 @@ cat << DESU >> ~/.zshrc
 /usr/bin/setxkbmap -option "caps:ctrl_modifier"
 
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH=$HOME/.pyenv/bin:~/la1n-tools:~/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/share:/usr/share/john:/opt/mssql-tools/bin:$PATH
+export PATH=$HOME/.bun/bin:$HOME/.pyenv/bin:~/la1n-tools:~/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/share:/usr/share/john:/opt/mssql-tools/bin:$PATH
 eval "$(pyenv init -)"
 
 if [ -f "$HOME/.cargo/env" ]; then
@@ -71,6 +71,22 @@ gql2sdl() {
   npx graphql-introspection-json-to-sdl $1 > "${1%.gql}.sdl"
 }
 
+myip() {
+  curl https://ipinfo.io/$(curl -s ident.me)
+}
+
+js-fmt() {
+  js-beautify $1 > $1.tmp && mv $1{.tmp,}
+}
+
+allurls() {
+  waymore -i $1 -mode U -v -p 5 -c ~/waymore_config.yml -urlr 3
+}
+urldecode() { sed 's/+/ /g; s/%/\\x/g' | xargs -0 printf; }
+alias yta="yt-dlp  -x --audio-format mp3 -R 99999 --fragment-retries 99999 --extractor-args 'youtube:player_client=android'"
+alias ytv="yt-dlp --merge-output-format mp4 -f 'bestvideo+bestaudio/best' -R 99999 --fragment-retries 99999"
+alias mpvg="mpv --player-operation-mode=pseudo-gui"
+
 DESU
 
 ### VIM
@@ -94,6 +110,7 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlig
 Plug 'itchyny/lightline.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'roxma/nvim-yarp'
+Plug 'NoahTheDuke/vim-just'
 call plug#end()
 
 set autoindent expandtab tabstop=2 shiftwidth=2
@@ -141,7 +158,8 @@ DESU
 #vim -c 'Copilot setup'
 
 cp ~/la1n-tools/.tmux.conf ~/
+cp -r ~/la1n-tools/.gf ~/
 
-echo "Done, start downloading seclists... ctrl+C to skip"
-sudo apt install seclists
+#echo "Done, start downloading seclists... ctrl+C to skip"
+#sudo apt install seclists
 

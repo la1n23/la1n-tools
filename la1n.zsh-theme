@@ -15,7 +15,7 @@ fi
 
 ZSH_THEME_RVM_PROMPT_OPTIONS="i v g"
 
-local ip=`curl -s ident.me`
+local ip=`curl --connect-timeout 1 -s ident.me`
 local vpn_ip=$(ifconfig | grep -A 1 tun0 | grep inet | tr -s ' ' | cut -d ' ' -f 3)
 
 PROMPT="${conda_prompt}${user_host}${current_dir} %{$fg_bold[blue]%}%t ${rvm_ruby}${vcs_branch}${venv_prompt}${kube_prompt} $ip/%{$fg_bold[cyan]%}$vpn_ip

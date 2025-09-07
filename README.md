@@ -8,9 +8,12 @@ cd ~/ && git clone https://github.com/la1n23/la1n-tools.git && bash la1n-tools/i
 ```bash
 cd ~/ && git clone https://github.com/la1n23/la1n-tools.git && bash la1n-tools/init.sh
 ```
-#### or
-```bash
-curl -sSL https://raw.githubusercontent.com/la1n23/tools/refs/heads/master/init.sh|bash
+
+# VPN
+Run visudo and add:
+```
+lain ALL=(ALL) NOPASSWD: /usr/bin/openconnect
+lain ALL=(ALL) NOPASSWD: /usr/sbin/openconnect
 ```
 
 # vim formatters for c/php/perl/json/sql
