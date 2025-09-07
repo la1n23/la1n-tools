@@ -10,7 +10,7 @@
 ### Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -- --unattended
 sed -i 's/robbyrussell/la1n/g' ~/.zshrc
-sudo apt update && sudo apt install -y fzf atool vifm rlwrap httrack
+sudo apt update && sudo apt install -y fzf atool vifm rlwrap httrack || echo "Skipping installing packages"
 sed -i 's/(git)/(git golang fzf nmap command-not-found zsh-autosuggestions)/g' ~/.zshrc
 #sudo chsh $(whoami) -s $(which zsh)
 echo 'export TERM=xterm-256color' >> ~/.zshrc
