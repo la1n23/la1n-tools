@@ -38,6 +38,12 @@ ls ~/.config/Postman/proxy
 certificates  postman-proxy-ca.crt  postman-proxy-ca.key
 ```
 
+# Firefox
+* https://github.com/kevin-mizu/domloggerpp
+* authentificator
+* pwnfoxy
+* dotgit
+
 # Burpsuite configuration
 
 ### Setting up CA

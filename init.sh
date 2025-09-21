@@ -86,6 +86,7 @@ urldecode() { sed 's/+/ /g; s/%/\\x/g' | xargs -0 printf; }
 alias yta="yt-dlp  -x --audio-format mp3 -R 99999 --fragment-retries 99999 --extractor-args 'youtube:player_client=android'"
 alias ytv="yt-dlp --merge-output-format mp4 -f 'bestvideo+bestaudio/best' -R 99999 --fragment-retries 99999"
 alias mpvg="mpv --player-operation-mode=pseudo-gui"
+unalias gf
 
 DESU
 
