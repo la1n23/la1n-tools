@@ -88,6 +88,38 @@ alias ytv="yt-dlp --merge-output-format mp4 -f 'bestvideo+bestaudio/best' -R 999
 alias mpvg="mpv --player-operation-mode=pseudo-gui"
 unalias gf
 
+ff-new() {
+    local template_profile="$HOME/.mozilla/firefox/ccw99o29.hacking-template"
+    local new_name="$1"
+
+    if [ -z "$new_name" ]; then
+        echo "Usage: ff-new <new_profile_name>"
+        return 1
+    fi
+
+    if [ ! -d "$template_profile" ]; then
+        echo "Error: Template profile not found"
+        return 1
+    fi
+
+    local random_id=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 8 | head -n 1)
+    local new_profile_dir="$HOME/.mozilla/firefox/${random_id}.${new_name}"
+
+    cp -r "$template_profile" "$new_profile_dir"
+
+    local profiles_ini="$HOME/.mozilla/firefox/profiles.ini"
+    local profile_count=$(grep -c '^\[Profile[0-9]\+\]' "$profiles_ini" 2>/dev/null || echo "0")
+
+    echo "" >> "$profiles_ini"
+    echo "[Profile${profile_count}]" >> "$profiles_ini"
+    echo "Name=${new_name}" >> "$profiles_ini"
+    echo "IsRelative=1" >> "$profiles_ini"
+    echo "Path=${random_id}.${new_name}" >> "$profiles_ini"
+    echo "Default=0" >> "$profiles_ini"
+
+    echo "Profile cloned: ${new_name}"
+}
+
 DESU
 
 ### VIM
