@@ -9,6 +9,7 @@
 
 ### Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -- --unattended
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 sed -i 's/robbyrussell/la1n/g' ~/.zshrc
 sudo apt update && sudo apt install -y fzf atool vifm rlwrap httrack || echo "Skipping installing packages"
 sed -i 's/(git)/(git golang fzf nmap command-not-found zsh-autosuggestions)/g' ~/.zshrc
@@ -118,6 +119,12 @@ ff-new() {
     echo "Default=0" >> "$profiles_ini"
 
     echo "Profile cloned: ${new_name}"
+}
+
+trufflehog_unique() {
+  local source="$1"
+  shift
+  sudo trufflehog --only-verified -j --log-level=-1 "$source" "$@" | jq -s 'unique_by(.Raw) | .[]' | wc -l
 }
 
 DESU
